@@ -7,9 +7,6 @@ import styles from './stylesheets/dashboard.module.sass'
 
 
 export default class Dashboard extends Component {
-  constructor(props) {
-    super(props);
-  }
   componentDidMount() {
     if (!this.props.products) {
       this.props.getAllProducts()
@@ -41,7 +38,7 @@ export default class Dashboard extends Component {
                 onClick={() => this.props.history.push(`/product-overview/${p._id}`)}>
                 <Product
                   title={p.title}
-                  price={`$${p.price} CAD`}
+                  price={`R$ ${p.price}`}
                   color={p.color}
                   image={p.imagePath}
                 />

@@ -19,7 +19,7 @@ export default class Filter_md extends Component {
     this.props.clear()
   }
   render() {
-    const { onChange, clear, selected_name, configs } = this.props
+    const { onChange, selected_name, configs } = this.props
     return (
       <div className={styles.outbox}>
         <div className={styles.panels}>
@@ -28,7 +28,7 @@ export default class Filter_md extends Component {
             onClick={this.clickShow}
           >
             {this.state.isShow
-              ? <div>Close Filter </div>
+              ? <div>Close Filter</div>
               : <div>Show Filter</div>
             }
           </div>
