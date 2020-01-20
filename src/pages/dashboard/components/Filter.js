@@ -5,6 +5,7 @@ import generateFilterString from '../utils/generateFilterString'
 import device from '../../../modules/mediaQuery'
 import MediaQuery from 'react-responsive'
 import FilterMd from './Filter_md'
+import Button from 'react-bootstrap/Button'
 
 export default class Filter extends Component {
   constructor(props) {
@@ -121,7 +122,8 @@ export default class Filter extends Component {
                 </div>
               </div>
               <div className={styles.clear_btn} onClick={this.clearAllFilter}>
-                <button>Clear All</button>
+                <Button variant="secondary">Limpar filtros</Button>
+
               </div>
               {/* filter tags */}
               <div className={styles.tags}>

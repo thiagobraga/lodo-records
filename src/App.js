@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
+import React, { Component } from 'react'
+import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { registerNav } from './modules/Navigation'
 import { insertToken } from './redux/action/tokenAction'
@@ -11,11 +11,13 @@ import ShoppingBagContainer from './pages/shoppingBag/ShoppingBagContainer'
 import CheckoutContainer from './pages/checkout/checkoutContainer'
 import CheckoutSuccessContainer from './pages/checkoutSuccess/CheckoutSuccessContainer'
 import CheckoutCancel from './pages/checkoutCancel/CheckoutCancel'
+import 'bootstrap/dist/css/bootstrap.min.css'
 
 class App extends Component {
   componentDidMount() {
     this.props.insertToken()
   }
+
   render() {
     return (
       <div>
@@ -36,13 +38,11 @@ class App extends Component {
           </Switch>
         </Router>
       </div>
-    );
+    )
   }
 }
-const mapStoreToProps = state => ({
-  token: state.token.user_token
-})
-const mapDispatchToProps = {
-  insertToken
-}
-export default connect(mapStoreToProps, mapDispatchToProps)(App);
+
+const mapStoreToProps = state => ({ token: state.token.user_token })
+const mapDispatchToProps = { insertToken }
+
+export default connect(mapStoreToProps, mapDispatchToProps)(App)
